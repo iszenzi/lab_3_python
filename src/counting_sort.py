@@ -7,6 +7,9 @@ def counting_sort(a: List[int]) -> List[int]:
     if any(type(x) is not int for x in a):
         raise ValueError("Элементы списка должны быть целыми числами")
 
+    if not a:
+        return []
+
     max_number = max(a)
     min_number = min(a)
 

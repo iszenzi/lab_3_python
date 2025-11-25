@@ -16,6 +16,3 @@ def quick_sort(a: List[int]) -> List[int]:
     center = [number for number in array if number == pivot]
     right = [number for number in array if number > pivot]
     return quick_sort(left) + center + quick_sort(right)
-
-
-print(quick_sort([1, 2, 3, 3324, 5, -5, 85, 3, -9, 32]))

@@ -9,6 +9,7 @@ def bubble_sort(a: List[int]) -> List[int]:
 
     if not a:
         return []
+
     array = a[:]
     len_array = len(array)
     for i in range(len_array):
