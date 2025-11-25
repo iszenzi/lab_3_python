@@ -2,6 +2,11 @@ from typing import List
 
 
 def bubble_sort(a: List[int]) -> List[int]:
+    if type(a) is not list:
+        raise ValueError("Аргумент должен быть списком")
+    if any(type(x) is not int for x in a):
+        raise ValueError("Элементы списка должны быть целыми числами")
+
     if not a:
         return []
     array = a[:]

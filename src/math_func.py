@@ -1,6 +1,6 @@
 def factorial(n: int) -> int:
     if n < 0 or type(n) is not int:
-        raise ValueError("Число должно быть целым неотрицательным")
+        raise ValueError("Аргумент должен быть целым неотрицательным числом")
     if n == 0:
         return 1
     result = 1
@@ -11,7 +11,7 @@ def factorial(n: int) -> int:
 
 def factorial_recursive(n: int) -> int:
     if n < 0 or type(n) is not int:
-        raise ValueError("Число должно быть целым неотрицательным")
+        raise ValueError("Аргумент должен быть целым неотрицательным числом")
     if n == 0:
         return 1
     return factorial_recursive(n - 1) * n
@@ -19,7 +19,7 @@ def factorial_recursive(n: int) -> int:
 
 def fibo(n: int) -> int:
     if n < 0 or type(n) is not int:
-        raise ValueError("Число должно быть целым неотрицательным")
+        raise ValueError("Аргумент должен быть целым неотрицательным числом")
     if n == 0:
         return 0
     if n == 1:
@@ -32,7 +32,7 @@ def fibo(n: int) -> int:
 
 def fibo_recursive(n: int) -> int:
     if n < 0 or type(n) is not int:
-        raise ValueError("Число должно быть целым неотрицательным")
+        raise ValueError("Аргумент должен быть целым неотрицательным числом")
     if n == 0:
         return 0
     if n == 1:
