@@ -22,6 +22,3 @@ def bubble_sort(a: List[int]) -> List[int]:
             break
 
     return array
-
-
-print(bubble_sort([5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]))

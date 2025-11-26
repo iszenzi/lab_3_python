@@ -26,6 +26,3 @@ def radix_sort(a: List[int], base: int = 10) -> List[int]:
         current_digit *= base
 
     return array
-
-
-print(radix_sort([2, 222, 4342, 23423, 54, 2, 754]))
