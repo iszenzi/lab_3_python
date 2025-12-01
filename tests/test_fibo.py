@@ -29,7 +29,7 @@ class TestFibo:
         assert fibo_recursive(9) == 13 + 21
         assert fibo_recursive(10) == 21 + 34
 
-    def test_fibo_negative(self):
+    def test_fibo_negative_raises(self):
         with pytest.raises(ValueError) as exc_info:
             fibo(-1)
         assert "Аргумент должен быть целым неотрицательным числом" in str(
