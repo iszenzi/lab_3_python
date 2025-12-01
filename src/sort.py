@@ -31,7 +31,7 @@ def quick_sort(a: list[int]) -> list[int]:
     if len(array) <= 1:
         return array
 
-    pivot = array[0]
+    pivot = array[len(array) // 2]
     left = [number for number in array if number < pivot]
     center = [number for number in array if number == pivot]
     right = [number for number in array if number > pivot]
