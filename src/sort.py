@@ -1,7 +1,4 @@
-from typing import List
-
-
-def bubble_sort(a: List[int]) -> List[int]:
+def bubble_sort(a: list[int]) -> list[int]:
     if type(a) is not list:
         raise ValueError("Аргумент должен быть списком")
     if any(type(x) is not int for x in a):
@@ -24,7 +21,7 @@ def bubble_sort(a: List[int]) -> List[int]:
     return array
 
 
-def quick_sort(a: List[int]) -> List[int]:
+def quick_sort(a: list[int]) -> list[int]:
     if type(a) is not list:
         raise ValueError("Аргумент должен быть списком")
     if any(type(x) is not int for x in a):
@@ -41,7 +38,7 @@ def quick_sort(a: List[int]) -> List[int]:
     return quick_sort(left) + center + quick_sort(right)
 
 
-def counting_sort(a: List[int]) -> List[int]:
+def counting_sort(a: list[int]) -> list[int]:
     if type(a) is not list:
         raise ValueError("Аргумент должен быть списком")
     if any(type(x) is not int for x in a):
@@ -56,8 +53,8 @@ def counting_sort(a: List[int]) -> List[int]:
     range_numbers = max_number - min_number + 1
     count = [0] * range_numbers
 
-    for numer in a:
-        count[numer - min_number] += 1
+    for number in a:
+        count[number - min_number] += 1
 
     array_sort = []
     for i in range(range_numbers):
@@ -65,7 +62,7 @@ def counting_sort(a: List[int]) -> List[int]:
     return array_sort
 
 
-def radix_sort(a: List[int], base: int = 10) -> List[int]:
+def radix_sort(a: list[int], base: int = 10) -> list[int]:
     if type(a) is not list:
         raise ValueError("Аргумент должен быть списком")
     if any(number < 0 for number in a) or any(type(number) is not int for number in a):
@@ -79,7 +76,7 @@ def radix_sort(a: List[int], base: int = 10) -> List[int]:
     current_digit = 1
 
     while max_number // current_digit > 0:
-        buckets: List[List[int]] = [[] for _ in range(base)]
+        buckets: list[list[int]] = [[] for _ in range(base)]
 
         for number in array:
             digit = (number // current_digit) % base
@@ -92,7 +89,7 @@ def radix_sort(a: List[int], base: int = 10) -> List[int]:
     return array
 
 
-def bucket_sort(a: List[float], buckets: int | None = None) -> List[float]:
+def bucket_sort(a: list[float], buckets: int | None = None) -> list[float]:
     if type(a) is not list:
         raise ValueError("Аргумент должен быть списком")
     if any(x < 0.0 or x >= 1.0 for x in a):
@@ -111,7 +108,7 @@ def bucket_sort(a: List[float], buckets: int | None = None) -> List[float]:
     if count_buckets <= 0:
         count_buckets = 1
 
-    buckets_list: List[List[float]] = [[] for _ in range(count_buckets)]
+    buckets_list: list[list[float]] = [[] for _ in range(count_buckets)]
 
     for number in array:
         index = int(number * count_buckets)
@@ -135,7 +132,7 @@ def bucket_sort(a: List[float], buckets: int | None = None) -> List[float]:
     return result
 
 
-def shift_down(array: List[int], start: int, end: int) -> None:
+def shift_down(array: list[int], start: int, end: int) -> None:
     root = start
     while True:
         child = root * 2 + 1
@@ -152,7 +149,7 @@ def shift_down(array: List[int], start: int, end: int) -> None:
             break
 
 
-def heap_sort(a: List[int]) -> List[int]:
+def heap_sort(a: list[int]) -> list[int]:
     if type(a) is not list:
         raise ValueError("Аргумент должен быть списком")
     if any(type(x) is not int for x in a):

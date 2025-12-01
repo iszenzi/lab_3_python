@@ -18,9 +18,7 @@ class Stack:
         return self.data[-1]
 
     def is_empty(self) -> bool:
-        if not self.data:
-            return True
-        return False
+        return not self.data
 
     def __len__(self) -> int:
         return len(self.data)
