@@ -1,4 +1,10 @@
 def bubble_sort(a: list[int]) -> list[int]:
+    """
+    Алгоритм сравнивает соседние элементы и меняет их местами, если они
+    находятся в неправильном порядке, пока массив не будет отсортирован
+    :param a: Список целых чисел для сортировки
+    :return: Отсортированный список целых чисел
+    """
     if type(a) is not list:
         raise ValueError("Аргумент должен быть списком")
     if any(type(x) is not int for x in a):
@@ -22,6 +28,12 @@ def bubble_sort(a: list[int]) -> list[int]:
 
 
 def quick_sort(a: list[int]) -> list[int]:
+    """
+    Алгоритм выбирает опорный элемент из середины списка, разделяет список на элементы
+    меньше, равные и больше опорного, рекурсивно сортирует подсписки, а потом объединяет подсписки
+    :param a: Список целых чисел для сортировки
+    :return: Отсортированный список целых чисел
+    """
     if type(a) is not list:
         raise ValueError("Аргумент должен быть списком")
     if any(type(x) is not int for x in a):
@@ -39,6 +51,11 @@ def quick_sort(a: list[int]) -> list[int]:
 
 
 def counting_sort(a: list[int]) -> list[int]:
+    """
+    Алгоритм подсчитывает количество  каждого из элементов списка, затем формирует отсортированный список на основе количества чисел
+    :param a: Список целых чисел для сортировки
+    :return: Отсортированный список целых чисел
+    """
     if type(a) is not list:
         raise ValueError("Аргумент должен быть списком")
     if any(type(x) is not int for x in a):
@@ -63,6 +80,12 @@ def counting_sort(a: list[int]) -> list[int]:
 
 
 def radix_sort(a: list[int], base: int = 10) -> list[int]:
+    """
+    Алгоритм сортирует числа по отдельным разрядам, начиная с младшего, применяет блочную сортировку для каждого разряда
+    :param a: Список неотрицательных целых чисел для сортировки
+    :param base: Основание системы счисления (по умолчанию 10)
+    :return: Отсортированный список неотрицательных целых чисел
+    """
     if type(a) is not list:
         raise ValueError("Аргумент должен быть списком")
     if any(number < 0 for number in a) or any(type(number) is not int for number in a):
@@ -90,6 +113,12 @@ def radix_sort(a: list[int], base: int = 10) -> list[int]:
 
 
 def bucket_sort(a: list[float], buckets: int | None = None) -> list[float]:
+    """
+    Алгоритм распределяет элементы списка по корзинам, затем сортирует каждую корзину пузырьковой сортировкой и объединяет результаты
+    :param a: Список вещественных чисел в диапазоне [0, 1) для сортировки
+    :param buckets: Количество корзин
+    :return: Отсортированный список вещественных чисел
+    """
     if type(a) is not list:
         raise ValueError("Аргумент должен быть списком")
     if any(x < 0.0 or x >= 1.0 for x in a):
@@ -133,6 +162,13 @@ def bucket_sort(a: list[float], buckets: int | None = None) -> list[float]:
 
 
 def shift_down(array: list[int], start: int, end: int) -> None:
+    """
+    Вспомогательная функция для heap_sort, перемещает элемент вниз по дереву до тех пор, пока он не займет правильную позицию
+    :param array: Список, представляющий бинарную кучу
+    :param start: Индекс корневого элемента для просеивания
+    :param end: Индекс последнего элемента в куче
+    :return: None
+    """
     root = start
     while True:
         child = root * 2 + 1
@@ -150,6 +186,11 @@ def shift_down(array: list[int], start: int, end: int) -> None:
 
 
 def heap_sort(a: list[int]) -> list[int]:
+    """
+    Алгоритм  извлекает максимальный элемент из списка и помещает его в конец отсортированной части, пока список не будет отсортирован
+    :param a: Список целых чисел для сортировки
+    :return: Отсортированный список целых чисел
+    """
     if type(a) is not list:
         raise ValueError("Аргумент должен быть списком")
     if any(type(x) is not int for x in a):

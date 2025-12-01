@@ -5,7 +5,6 @@ from typing import Mapping, Callable
 def timeit_once(func, *args, **kwargs) -> float:
     """
     Измеряет время выполнения функции один раз
-
     :param func: Функция для измерения времени
     :param args: Позиционные аргументы для функции
     :param kwargs: Именованные аргументы для функции
@@ -23,7 +22,6 @@ def benchmark_sorts(
 ) -> dict[str, dict[str, float]]:
     """
     Запускает бенчмарки сортировок для массивов и алгоритмов
-
     :param arrays: Словарь массивов для тестирования
     :param algos: Словарь алгоритмов сортировки
     :return: Словарь результатов вида {array_name: {algo_name: время_в_секундах}}
